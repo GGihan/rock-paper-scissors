@@ -1,0 +1,8 @@
+My Pseudocode:
+
+Task:
+
+Write the code so that getComputerChoice will randomly return one of the following string values: “rock”, “paper” or “scissors”.
+
+Get a Number between 1 and 3 inclusive.
+return string rock, paper or scissor depending on number generated.
