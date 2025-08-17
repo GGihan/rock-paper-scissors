@@ -17,9 +17,11 @@ function getHumanChoice() {
 function playGame () {
     let humanScore = 0;
     let computerScore = 0;
-    let humanSelection = getHumanChoice();
-    let computerSelection = getComputerChoice();
+    let humanSelection;
+    let computerSelection;
     function playRound(humanChoice, computerChoice) {
+        humanSelection = getHumanChoice();
+        computerSelection = getComputerChoice();
         if (humanChoice === computerChoice) {
             return console.log("I'ts a draw!");
         } else if (humanChoice === "rock" && computerChoice === "scissors") {
@@ -37,19 +39,17 @@ function playGame () {
         }
     }
     playRound(humanSelection, computerSelection);
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
+    
     playRound(humanSelection, computerSelection);
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
+    
     playRound(humanSelection, computerSelection);
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
+    
     playRound(humanSelection, computerSelection);
-    humanSelection = getHumanChoice();
-    computerSelection = getComputerChoice();
+    
     playRound(humanSelection, computerSelection);
+    
     console.log(humanScore, computerScore);
+    
     if (humanScore > computerScore) {
         return console.log("You won the game!");
     } else if (humanScore < computerScore) {
