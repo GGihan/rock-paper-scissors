@@ -6,3 +6,10 @@ Write the code so that getComputerChoice will randomly return one of the followi
 
 Get a Number between 1 and 3 inclusive.
 return string rock, paper or scissor depending on number generated.
+
+Task:
+
+Your game will be played round by round.
+You will write a function that takes the human and computer player choices
+as arguments, plays a single round, increments the round winner’s score and
+logs a winner announcement.
