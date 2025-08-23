@@ -14,13 +14,15 @@ function getHumanChoice() {
     return choice.toLowerCase();
 }
 
-
+let roundCounter = 0;
 let humanScore = 0;
 let computerScore = 0;
 let computerSelection = getComputerChoice();
 let results = document.querySelector("#results");
 let resultPara = document.createElement("p");
 results.appendChild(resultPara);
+let resultScore = document.createElement("p");
+results.appendChild(resultScore);
 function playRound(humanChoice, computerChoice) {
     computerSelection = getComputerChoice();
     if (humanChoice === computerChoice) {
@@ -38,18 +40,29 @@ function playRound(humanChoice, computerChoice) {
         computerScore = computerScore + 1;
         resultPara.textContent = `You lose! ${computerChoice} beats ${humanChoice}.`;
     }
+    roundCounter += 1;
+    resultScore.textContent = `Player-Score: ${humanScore} / Computer-Score: ${computerScore}`;
+    fullGame();
+}
+
+function fullGame() {
+    if (roundCounter == 5) {
+        anounceScore(humanScore, computerScore);
+        roundCounter = 0;
+        humanScore = 0;
+        computerScore = 0;
+    }
 }
 
 function anounceScore(humanScore, computerScore) {
     if (humanScore > computerScore) {
-        return console.log("You won the game!");
+        return alert("You won the game!");
     } else if (humanScore < computerScore) {
-        return console.log("You lost the game!");
+        return alert("You lost the game!");
     } else {
-        return console.log("The game is a draw, try again!");
+        return alert("The game is a draw, try again!");
     }
 }
-console.log(humanScore, computerScore);
 
 let buttons = document.querySelector("#buttons");
 
